@@ -24,9 +24,8 @@ public class StudentConfig {
                     "alexWilliams@gmail.com"
             );
 
-            repository.saveAll(
-                    List.of(tushar,alex)
-            );
+            repository.save(tushar);
+            repository.save(alex);
         };
 
     }
