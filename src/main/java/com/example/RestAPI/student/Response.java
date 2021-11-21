@@ -8,4 +8,12 @@ public class Response {
         this.name = name;
         this.statusMessage = "Student Created Successfully";
     }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "name='" + name + '\'' +
+                ", statusMessage='" + statusMessage + '\'' +
+                '}';
+    }
 }
