@@ -23,13 +23,14 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public void addNewStudent(Student student) {
+    public Response addNewStudent(Student student) {
         Optional<Student> studentOptional= studentRepository
                 .findStudentByEmail(student.getEmail());
         if(studentOptional.isPresent()){
             throw new IllegalMonitorStateException("email already registered");
         }
         studentRepository.save(student);
+        return new Response(student.getName());
     }
 
     public void deleteStudent(Long id) {
